@@ -10,9 +10,10 @@ interface IBooks {
 }
 
 const getPets = async () => {
-  const query = await client.fetch(
-    `*[_type=="pet"]`
-  );
+  // const query = await client.fetch(
+  //   `*[_type=="pet"]`
+  // );
+  const query = await client.fetch(`*[_type=="pet"]`, {}, { cache: 'no-cache' });
   console.log(query)
   return query
 }
